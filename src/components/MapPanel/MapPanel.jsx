@@ -2,7 +2,7 @@
 const MapPanel = () => {
   return (
     <div>
-      <a href="/Zombie_Sample.zip" download="code">
+      <a href="/Zombie_Sample.zip">
         <button type="button">Download</button>
       </a>
     </div>

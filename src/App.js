@@ -13,7 +13,6 @@ const App = () => {
   }
 
   const handleExport = (e) => {
-    e.preventDefault()
   }
 
   return (
