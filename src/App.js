@@ -9,7 +9,7 @@ import ReactFlow, {
 
 import Sidebar from './Sidebar.js';
 
-import './index.css';
+import './App.css';
 
 const initialNodes = [
   {
