@@ -12,8 +12,8 @@ const SidePanel = ({ selected, onClick }) => {
       <Tabs flex={1} isFitted variant={'enclosed'}>
         <TabList>
           <Tab>App</Tab>
-          <Tab>Map</Tab>
           <Tab>Player</Tab>
+          <Tab>Map</Tab>
           <Tab>Widget</Tab>
         </TabList>
 
@@ -22,10 +22,10 @@ const SidePanel = ({ selected, onClick }) => {
             <AppPanel selected={selected} onClick={onClick} />
           </TabPanel>
           <TabPanel position={'absolute'} top={0} bottom={0} width='100%' overflow={'auto'}>
-            <MapPanel selected={selected} onClick={onClick} />
+            <PlayerPanel selected={selected} onClick={onClick} />
           </TabPanel>
           <TabPanel position={'absolute'} top={0} bottom={0} width='100%' overflow={'auto'}>
-            <PlayerPanel selected={selected} onClick={onClick} />
+            <MapPanel selected={selected} onClick={onClick} />
           </TabPanel>
           <TabPanel position={'absolute'} top={0} bottom={0} width='100%' overflow={'auto'}>
             <WidgetPanel selected={selected} onClick={onClick} />

@@ -1,5 +1,6 @@
 import { Stack, Box } from '@chakra-ui/react'
 import PlayerEditor from './PlayerEditor'
+import MessageEditor from './MessageEditor'
 
 const NodeEditor = ({
   node,
@@ -13,10 +14,20 @@ const NodeEditor = ({
 
   }
 
+  let Editor;
+  switch(node.id) {
+    case 'message': Editor = MessageEditor; break;
+    case 'zombie': Editor = PlayerEditor; break;
+    default: 
+  }
+
+  if(!Editor) {
+    return null
+  }
+
   return (
-    <Box width={320} mt={4} mr={4}>
+    <Box width={320} mt={4} mr={4} position='absolute' top={0} right={0} zIndex={1500}>
       <Stack
-        bg={'#f7f7f7'}
         p={4}
         direction={'column'}
         borderRadius={4}
@@ -24,7 +35,7 @@ const NodeEditor = ({
         borderWidth={1}
         borderStyle='solid'
         >
-        <PlayerEditor values={'asdf'} onChange={handleChange} />
+        <Editor values={'asdf'} onChange={handleChange} />
       </Stack>
     </Box>  
   )
