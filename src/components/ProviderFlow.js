@@ -6,15 +6,14 @@ import ReactFlow, {
   addEdge,
   Controls,
 } from 'react-flow-renderer';
-
+import { nodeTypes } from "./Nodes";
 import Sidebar from './Sidebar.js';
-
 import '../App.css';
 
 const initialNodes = [
   {
     id: 'provider-1',
-    type: 'input',
+    type: 'circle',
     data: { label: 'Node 1' },
     position: { x: 250, y: 5 },
   },
@@ -22,7 +21,6 @@ const initialNodes = [
   { id: 'provider-3', data: { label: 'Node 3' }, position: { x: 400, y: 100 } },
   { id: 'provider-4', data: { label: 'Node 4' }, position: { x: 400, y: 200 } },
 ];
-
 const initialEdges = [
   {
     id: 'provider-e1-2',
@@ -38,6 +36,7 @@ const ProviderFlow = () => {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const onConnect = useCallback((params) => setEdges((els) => addEdge(params, els)), []);
 
+  console.log(nodes)
   return (
     <div className="providerflow">
       <ReactFlowProvider>
@@ -45,6 +44,7 @@ const ProviderFlow = () => {
           <ReactFlow
             nodes={nodes}
             edges={edges}
+            nodeTypes={nodeTypes}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}

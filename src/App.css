@@ -45,6 +45,6 @@ html, body, #root {
   .providerflow aside {
     width: 20%;
     max-width: 250px;
-    height: 200px;
+    height: 95vh;
   }
 }
