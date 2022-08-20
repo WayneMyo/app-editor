@@ -5,8 +5,6 @@ import WidgetPanel from '../WidgetPanel'
 import MapPanel from '../MapPanel'
 import PlayerPanel from '../PlayerPanel'
 
-
-
 const SidePanel = ({ selected, onClick }) => {
 
   return (
@@ -19,17 +17,17 @@ const SidePanel = ({ selected, onClick }) => {
           <Tab>Widget</Tab>
         </TabList>
 
-        <TabPanels>
-          <TabPanel>
+        <TabPanels position={'relative'} height='100%' mb={5}>
+          <TabPanel position={'absolute'} top={0} bottom={0} width='100%' overflow={'auto'}>
             <AppPanel selected={selected} onClick={onClick} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel position={'absolute'} top={0} bottom={0} width='100%' overflow={'auto'}>
             <MapPanel selected={selected} onClick={onClick} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel position={'absolute'} top={0} bottom={0} width='100%' overflow={'auto'}>
             <PlayerPanel selected={selected} onClick={onClick} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel position={'absolute'} top={0} bottom={0} width='100%' overflow={'auto'}>
             <WidgetPanel selected={selected} onClick={onClick} />
           </TabPanel>
         </TabPanels>
