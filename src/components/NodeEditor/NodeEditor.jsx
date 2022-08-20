@@ -16,7 +16,7 @@ const NodeEditor = ({
 
   let Editor;
   switch(node.id) {
-    case 'message': Editor = MessageEditor; break;
+    case 'provider-5': Editor = MessageEditor; break;
     case 'zombie': Editor = PlayerEditor; break;
     default: 
   }
