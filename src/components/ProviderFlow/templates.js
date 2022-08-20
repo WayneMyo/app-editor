@@ -10,7 +10,7 @@ export const initialState = {
       { id: 'provider-2', type: 'diamond', data: { label: 'player_count > 2' }, position: { x: 100, y: 100 } },
       { id: 'provider-3', data: { label: 'App.assign_role' }, position: { x: 400, y: 100 } },
       { id: 'provider-4', data: { label: 'start: true' }, position: { x: 400, y: 200 } },
-      { id: 'provider-5', data: { label: 'message display' }, position: { x: -200, y: 100 } },
+      { id: 'provider-5', data: { label: 'message display' }, position: { x: -200, y: 100 }, category: 'message' },
       { id: 'provider-6', data: { label: 'end' }, position: { x: -200, y: 200 } }
     ],
     edges: [
@@ -176,7 +176,8 @@ export const initialState = {
       { 
         id: 'zombie', 
         data: { label: 'Zombie' }, 
-        position: { x: 250, y: 100 } 
+        position: { x: 250, y: 100 },
+        category: 'zombie'
       },
     ]
   }
