@@ -62,19 +62,19 @@ const PlayerEditor = ({
         <Fragment>
           <Stack direction={'row'} alignItems='center'>
             <Text minW={45}>Down</Text>
-            <Image pt={2} src={'./images/jpg/monster_down.jpeg'} minW={0} objectFit='cover'/>
+            <Image pt={2} src={`${process.env.PUBLIC_URL}/images/jpg/monster_down.jpeg`} minW={0} objectFit='cover'/>
           </Stack>
           <Stack direction={'row'} alignItems='center'>
             <Text minW={45}>Left</Text>
-            <Image pt={2} src={'./images/jpg/monster_left.jpeg'} minW={0} objectFit='cover'/>
+            <Image pt={2} src={`${process.env.PUBLIC_URL}/images/jpg/monster_left.jpeg`} minW={0} objectFit='cover'/>
           </Stack>
           <Stack direction={'row'} alignItems='center'>
             <Text minW={45}>Up</Text>
-            <Image pt={2} src={'./images/jpg/monster_up.jpeg'} minW={0} objectFit='cover' />
+            <Image pt={2} src={`${process.env.PUBLIC_URL}/images/jpg/monster_up.jpeg`} minW={0} objectFit='cover' />
           </Stack>
           <Stack direction={'row'} alignItems='center'>
             <Text minW={45}>Right</Text>
-            <Image pt={2} src={'./images/jpg/monster_right.jpeg'} minW={0} objectFit='cover' />
+            <Image pt={2} src={`${process.env.PUBLIC_URL}/images/jpg/monster_right.jpeg`} minW={0} objectFit='cover' />
           </Stack>
         </Fragment>
       }

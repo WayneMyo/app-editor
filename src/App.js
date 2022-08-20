@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ProviderFlow from './components/ProviderFlow';
 import SidePanel from './components/SidePanel';
-import { Heading, Box, Divider, Stack, Flex } from '@chakra-ui/react'
+import { Heading, Box, Divider, Stack, Flex, Button } from '@chakra-ui/react'
 
 const App = () => {
 
@@ -12,10 +12,25 @@ const App = () => {
     setSelectedOption(option)
   }
 
+  const handleExport = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <Stack direction='column' flex={1} spacing={0} className="App" overflow={'hidden'}>
-      <Box as='nav' h={62} minH={62} display={'flex'} px={4} alignItems={'center'}>
+      <Box 
+        as='nav' 
+        h={62} 
+        minH={62} 
+        display={'flex'} 
+        px={4} 
+        alignItems={'center'}
+        justifyContent='space-between'
+        >
         <Heading color={'gray.600'} size='md'>Zep-script Editor</Heading>
+        <a href={`${process.env.PUBLIC_URL}/Zombie_Sample.zip`}>
+          <Button colorScheme={'purple'} onClick={handleExport}>Export</Button>
+        </a>
       </Box>
       <Divider borderBottomWidth={2} />
       <Stack direction='row' spacing='12px' height={'100%'}>
