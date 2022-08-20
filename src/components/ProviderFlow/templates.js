@@ -7,18 +7,23 @@ export const initialState = {
         data: { label: 'OnInit' },
         position: { x: 250, y: 5 },
       },
-      { id: 'provider-2', data: { label: 'Node 2' }, position: { x: 100, y: 100 } },
-      { id: 'provider-3', data: { label: 'Node 3' }, position: { x: 400, y: 100 } },
-      { id: 'provider-4', data: { label: 'Node 4' }, position: { x: 400, y: 200 } },
+      { id: 'provider-2', type: 'diamond', data: { label: 'player_count > 2' }, position: { x: 100, y: 100 } },
+      { id: 'provider-3', data: { label: 'App.assign_role' }, position: { x: 400, y: 100 } },
+      { id: 'provider-4', data: { label: 'start: true' }, position: { x: 400, y: 200 } },
+      { id: 'provider-5', data: { label: 'message display' }, position: { x: -200, y: 100 } },
+      { id: 'provider-6', data: { label: 'end' }, position: { x: -200, y: 200 } }
     ],
     edges: [
       {
-        id: 'provider-e1-2',
+        id: 'provider-e1',
         source: 'provider-1',
         target: 'provider-2',
         animated: true,
       },
-      { id: 'provider-e1-3', source: 'provider-1', target: 'provider-3' },
+      { id: 'provider-e2', source: 'provider-2', target: 'provider-3' },
+      { id: 'provider-e3', source: 'provider-3', target: 'provider-4' },
+      { id: 'provider-e4', source: 'provider-2', target: 'provider-5', sourceHandle: 'left2' },
+      { id: 'provider-e5', source: 'provider-5', target: 'provider-6' }
     ]
   },
   'onJoinPlayer': {
@@ -29,8 +34,18 @@ export const initialState = {
         data: { label: 'onJoinPlayer' },
         position: { x: 250, y: 5 },
       },
+      { id: 'provider-2', type: 'diamond', data: { label: 'start?' }, position: { x: 100, y: 100 } },
+      { id: 'provider-3', data: { label: 'new player assign\nplayer zombie' }, position: { x: 400, y: 100 } },
     ],
-    edges: []
+    edges: [
+      {
+        id: 'provider-e1-2',
+        source: 'provider-1',
+        target: 'provider-2',
+        animated: true,
+      },
+      { id: 'provider-e1-3', source: 'provider-2', target: 'provider-3' },
+    ]
   },
   'onStart': {
     nodes: [
@@ -43,7 +58,7 @@ export const initialState = {
     ],
     edges: []
   },
-  'onUpdate': {
+ 'onUpdate': {
     nodes: [
       {
         id: 'provider-1',
@@ -62,8 +77,15 @@ export const initialState = {
         data: { label: 'onLeavePlayer' },
         position: { x: 250, y: 5 },
       },
+      { id: 'provider-2', data: { label: 'Judegement' }, position: { x: 400, y: 100 } },
     ],
-    edges: []
+    edges: [
+      {
+        id: 'provider-e1-2',
+        source: 'provider-1',
+        target: 'provider-2',
+      },
+    ]
   },
   'onDestroy': {
     nodes: [
@@ -73,7 +95,14 @@ export const initialState = {
         data: { label: 'onDestroy' },
         position: { x: 250, y: 5 },
       },
+      { id: 'provider-2', data: { label: 'End' }, position: { x: 100, y: 100 } },
     ],
-    edges: []
+    edges: [
+      {
+        id: 'provider-e1-2',
+        source: 'provider-1',
+        target: 'provider-2',
+      }
+    ]
   }
 }
