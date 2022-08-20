@@ -47,28 +47,18 @@ export const initialState = {
       { id: 'provider-e1-3', source: 'provider-2', target: 'provider-3' },
     ]
   },
-  'onAttack': {
+  'onStart': {
     nodes: [
       {
         id: 'provider-1',
         type: 'circle',
-        data: { label: 'onAttack' },
+        data: { label: 'onStart' },
         position: { x: 250, y: 5 },
       },
-      { id: 'provider-2', data: { label: 'Infect' }, position: { x: 100, y: 100 } },
-      { id: 'provider-3', data: { label: 'Judegement' }, position: { x: 400, y: 100 } },
     ],
-    edges: [
-      {
-        id: 'provider-e1-2',
-        source: 'provider-1',
-        target: 'provider-2',
-        animated: true,
-      },
-      { id: 'provider-e1-3', source: 'provider-2', target: 'provider-3' },
-    ]
+    edges: []
   },
- /* 'onUpdate': {
+ 'onUpdate': {
     nodes: [
       {
         id: 'provider-1',
@@ -78,7 +68,7 @@ export const initialState = {
       },
     ],
     edges: []
-  },*/
+  },
   'onLeavePlayer': {
     nodes: [
       {
