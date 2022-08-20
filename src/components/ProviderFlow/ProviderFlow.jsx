@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ReactFlow, {
   ReactFlowProvider,
   useNodesState,
@@ -8,6 +8,7 @@ import ReactFlow, {
 } from 'react-flow-renderer';
 import { nodeTypes } from "../Nodes";
 import Sidebar from './../Sidebar.js';
+import NodeEditor from './../NodeEditor';
 import './ProviderFlow.css';
 import { initialState } from './templates';
 
@@ -15,6 +16,10 @@ const ProviderFlow = ({ selected }) => {
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialState[selected].nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialState[selected].edges);
+  const [ node, setNode ] = useState(null)
+
+  const handleNodeClick = (event, node) => setNode(node)
+
   const onConnect = useCallback((params) => setEdges((els) => addEdge(params, els)), []);
 
   useEffect(() => {
@@ -34,12 +39,16 @@ const ProviderFlow = ({ selected }) => {
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
+            onNodeClick={handleNodeClick}
             fitView
           >
             <Controls />
           </ReactFlow>
         </div>
-        <Sidebar nodes={nodes} setNodes={setNodes} />
+        {
+          node &&
+          <NodeEditor node={node} nodes={nodes} setNodes={setNodes} />
+        }
       </ReactFlowProvider>
     </div>
   );
