@@ -27,7 +27,7 @@ const App = () => {
         justifyContent='space-between'
         >
         <Heading color={'gray.600'} size='md'>MetaFlow</Heading>
-        <a href={`${process.env.PUBLIC_URL}/Zombie_Sample.zip`}>
+        <a href={`${process.env.PUBLIC_URL}/resource/app.zip`}>
           <Button colorScheme={'purple'} onClick={handleExport}>Export</Button>
         </a>
       </Box>
