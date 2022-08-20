@@ -1,31 +1,62 @@
-import "../src/style.css"
-import OverviewFlow from "./Flow-Builder/FlowBuilder";
-import styled from "styled-components";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useCallback } from 'react';
+import ReactFlow, {
+  ReactFlowProvider,
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  Controls,
+} from 'react-flow-renderer';
 
-const ContainerDiv = styled(Container)`
-  font-family: sans-serif;
-  text-align: center;
-`;
+import Sidebar from './Sidebar.js';
 
-const DemoArea = styled(Col)`
-  width: 100%;
-  height: 85vh;
-`;
+import './index.css';
 
-export default function App() {
+const initialNodes = [
+  {
+    id: 'provider-1',
+    type: 'input',
+    data: { label: 'Node 1' },
+    position: { x: 250, y: 5 },
+  },
+  { id: 'provider-2', data: { label: 'Node 2' }, position: { x: 100, y: 100 } },
+  { id: 'provider-3', data: { label: 'Node 3' }, position: { x: 400, y: 100 } },
+  { id: 'provider-4', data: { label: 'Node 4' }, position: { x: 400, y: 200 } },
+];
+
+const initialEdges = [
+  {
+    id: 'provider-e1-2',
+    source: 'provider-1',
+    target: 'provider-2',
+    animated: true,
+  },
+  { id: 'provider-e1-3', source: 'provider-1', target: 'provider-3' },
+];
+
+const ProviderFlow = () => {
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const onConnect = useCallback((params) => setEdges((els) => addEdge(params, els)), []);
+
   return (
-    <ContainerDiv fluid>
-      <Row>
-        <Col>
-          <h1>Hello CodeSandbox</h1>
-        </Col>
-      </Row>
-      <Row>
-        <DemoArea>
-          <OverviewFlow />
-        </DemoArea>
-      </Row>
-    </ContainerDiv>
+    <div className="providerflow">
+      <ReactFlowProvider>
+        <div className="reactflow-wrapper">
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            fitView
+          >
+            <Controls />
+          </ReactFlow>
+        </div>
+        <Sidebar nodes={nodes} setNodes={setNodes} />
+      </ReactFlowProvider>
+    </div>
   );
-}
+};
+
+export default ProviderFlow;
