@@ -15,7 +15,7 @@ const App = () => {
   return (
     <Stack direction='column' flex={1} spacing={0} className="App" overflow={'hidden'}>
       <Box as='nav' h={62} minH={62} display={'flex'} px={4} alignItems={'center'}>
-        <Heading color={'gray.600'} size='md'>Zep-script Editor</Heading>
+        <Heading color={'gray.600'} size='md'>MetaFlow</Heading>
       </Box>
       <Divider borderBottomWidth={2} />
       <Stack direction='row' spacing='12px' height={'100%'}>
