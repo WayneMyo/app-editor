@@ -23,7 +23,7 @@ const App = () => {
           <SidePanel selected={selectedOption} onClick={handleOptionClick} />
           <Divider orientation='vertical' borderLeftWidth={2} />
         </Flex>
-        <Box display='flex' flex={1}>
+        <Box display='flex' flex={1} position='relative'>
           <ProviderFlow selected={selectedOption} />
         </Box>
       </Stack>

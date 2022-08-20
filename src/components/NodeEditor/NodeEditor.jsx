@@ -26,7 +26,7 @@ const NodeEditor = ({
   }
 
   return (
-    <Box width={320} mt={4} mr={4}>
+    <Box width={320} mt={4} mr={4} position='absolute' top={0} right={0} zIndex={1500}>
       <Stack
         p={4}
         direction={'column'}
