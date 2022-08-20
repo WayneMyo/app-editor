@@ -3,8 +3,8 @@ import { Stack, Heading, List, ListItem } from '@chakra-ui/react'
 const lifeCycles = [
   'onInit',
   'onJoinPlayer',
-  'onStart',
-  'onUpdate',
+  'onAttack',
+ // 'onUpdate',
   'onLeavePlayer',
   'onDestroy'
 ]
