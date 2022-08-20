@@ -10,7 +10,7 @@ export const initialState = {
       { id: 'provider-2', type: 'diamond', data: { label: 'player_count > 2' }, position: { x: 100, y: 100 } },
       { id: 'provider-3', data: { label: 'App.assign_role' }, position: { x: 400, y: 100 } },
       { id: 'provider-4', data: { label: 'start: true' }, position: { x: 400, y: 200 } },
-      { id: 'message', data: { label: 'message display' }, position: { x: -200, y: 100 } },
+      { id: 'provider-5', data: { label: 'message display' }, position: { x: -200, y: 100 }, category: 'message' },
       { id: 'provider-6', data: { label: 'end' }, position: { x: -200, y: 200 } }
     ],
     edges: [
@@ -47,28 +47,18 @@ export const initialState = {
       { id: 'provider-e1-3', source: 'provider-2', target: 'provider-3' },
     ]
   },
-  'onAttack': {
+  'onStart': {
     nodes: [
       {
         id: 'provider-1',
         type: 'circle',
-        data: { label: 'onAttack' },
+        data: { label: 'onStart' },
         position: { x: 250, y: 5 },
       },
-      { id: 'provider-2', data: { label: 'Infect' }, position: { x: 100, y: 100 } },
-      { id: 'provider-3', data: { label: 'Judgement' }, position: { x: 400, y: 100 } },
     ],
-    edges: [
-      {
-        id: 'provider-e1-2',
-        source: 'provider-1',
-        target: 'provider-2',
-        animated: true,
-      },
-      { id: 'provider-e1-3', source: 'provider-2', target: 'provider-3' },
-    ]
+    edges: []
   },
- /* 'onUpdate': {
+ 'onUpdate': {
     nodes: [
       {
         id: 'provider-1',
@@ -78,7 +68,7 @@ export const initialState = {
       },
     ],
     edges: []
-  },*/
+  },
   'onLeavePlayer': {
     nodes: [
       {
@@ -186,7 +176,8 @@ export const initialState = {
       { 
         id: 'zombie', 
         data: { label: 'Zombie' }, 
-        position: { x: 250, y: 100 } 
+        position: { x: 250, y: 100 },
+        category: 'zombie'
       },
     ]
   }

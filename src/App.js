@@ -27,7 +27,7 @@ const App = () => {
         alignItems={'center'}
         justifyContent='space-between'
         >
-        <Heading color={'gray.600'} size='md'>Zep-script Editor</Heading>
+        <Heading color={'gray.600'} size='md'>MetaFlow</Heading>
         <a href={`${process.env.PUBLIC_URL}/Zombie_Sample.zip`}>
           <Button colorScheme={'purple'} onClick={handleExport}>Export</Button>
         </a>
