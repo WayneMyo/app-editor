@@ -21,8 +21,8 @@ const ProviderFlow = ({ selected }) => {
   const handleNodeClick = (event, node) => setNode(node)
 
   const generateZep = (nodes, edges) => {
-    console.log('nodes', nodes);
-    console.log('edges', edges)
+    const nodeDict = {};
+    nodes.forEach(node => nodeDict[node.id] = node);
   };
 
   const onConnect = useCallback((params) => setEdges((els) => addEdge(params, els)), []);
@@ -54,8 +54,8 @@ const ProviderFlow = ({ selected }) => {
           <NodeEditor node={node} nodes={nodes} setNodes={setNodes} />
         }
       </ReactFlowProvider>
-      <a style={{ display: "inline-block", textAlign: "right", paddingRight:"20px" }} href={`${process.env.PUBLIC_URL}/resource/app.zip`}>
-        <Button colorScheme={'purple'} onClick={() => generateZep(nodes, edges)}>Export</Button>
+      <a style={{ display: "inline-block", textAlign: "right", paddingRight:"20px" }}> 
+        <Button colorScheme={'purple'} onClick={() => generateZep(nodes, edges)} href={`${process.env.PUBLIC_URL}/resource/app.zip`}>Export</Button>
       </a>
     </div>
   );
