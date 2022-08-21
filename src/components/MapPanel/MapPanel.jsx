@@ -1,11 +1,12 @@
 
 const MapPanel = () => {
   return (
-    <div>
+    <></>
+    /*<div>
       <a href="/Zombie_Sample.zip">
         <button type="button">Download</button>
       </a>
-    </div>
+    </div>*/
   )
 }
 
