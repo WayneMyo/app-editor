@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ProviderFlow from './components/ProviderFlow';
 import SidePanel from './components/SidePanel';
-import { Heading, Box, Divider, Stack, Flex, Button } from '@chakra-ui/react'
+import { Heading, Box, Divider, Stack, Flex, Button } from '@chakra-ui/react';
 
 const App = () => {
 
@@ -27,9 +27,6 @@ const App = () => {
         justifyContent='space-between'
         >
         <Heading color={'gray.600'} size='md'>MetaFlow</Heading>
-        <a href={`${process.env.PUBLIC_URL}/resource/app.zip`}>
-          <Button colorScheme={'purple'} onClick={handleExport}>Export</Button>
-        </a>
       </Box>
       <Divider borderBottomWidth={2} />
       <Stack direction='row' spacing='12px' height={'100%'}>

@@ -7,27 +7,31 @@ import ReactFlow, {
   Controls,
 } from 'react-flow-renderer';
 import { nodeTypes } from "../Nodes";
-import Sidebar from './../Sidebar.js';
 import NodeEditor from './../NodeEditor';
 import './ProviderFlow.css';
 import { initialState } from './templates';
+import { Button } from '@chakra-ui/react'
 
 const ProviderFlow = ({ selected }) => {
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialState[selected].nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialState[selected].edges);
-  const [ node, setNode ] = useState(null)
+  const [node, setNode] = useState(null)
 
   const handleNodeClick = (event, node) => setNode(node)
+
+  const generateZep = (nodes, edges) => {
+    console.log('nodes', nodes);
+    console.log('edges', edges)
+  };
 
   const onConnect = useCallback((params) => setEdges((els) => addEdge(params, els)), []);
 
   useEffect(() => {
     setNodes(initialState[selected].nodes)
     setEdges(initialState[selected].edges)
-  }, [selected]) 
+  }, [selected])
 
-  console.log(nodes)
   return (
     <div className="providerflow">
       <ReactFlowProvider>
@@ -50,6 +54,9 @@ const ProviderFlow = ({ selected }) => {
           <NodeEditor node={node} nodes={nodes} setNodes={setNodes} />
         }
       </ReactFlowProvider>
+      <a style={{ display: "inline-block", textAlign: "right", paddingRight:"20px" }} href={`${process.env.PUBLIC_URL}/resource/app.zip`}>
+        <Button colorScheme={'purple'} onClick={() => generateZep(nodes, edges)}>Export</Button>
+      </a>
     </div>
   );
 };

@@ -116,9 +116,9 @@ export const TextNode = ({ data }) => {
 };
 
 export const nodeTypes = {
-  circle: CircleNode,
-  rectangle: RectangleNode,
-  diamond: DiamondNode,
+  initiNode: CircleNode,
+  actionNode: RectangleNode,
+  decisionNode: DiamondNode,
   triangle: TriangleNode,
   text: TextNode
 };

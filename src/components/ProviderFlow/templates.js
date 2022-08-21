@@ -3,11 +3,11 @@ export const initialState = {
     nodes: [
       {
         id: 'provider-1',
-        type: 'circle',
+        type: 'initiNode',
         data: { label: 'OnInit' },
         position: { x: 250, y: 5 },
       },
-      { id: 'provider-2', type: 'diamond', data: { label: 'player_count > 2' }, position: { x: 100, y: 100 } },
+      { id: 'provider-2', type: 'decisionNode', data: { label: 'player_count > 2' }, position: { x: 100, y: 100 } },
       { id: 'provider-3', data: { label: 'App.assign_role' }, position: { x: 400, y: 100 } },
       { id: 'provider-4', data: { label: 'start: true' }, position: { x: 400, y: 200 } },
       { id: 'provider-5', data: { label: 'message display' }, position: { x: -200, y: 100 }, category: 'message' },
@@ -30,11 +30,11 @@ export const initialState = {
     nodes: [
       {
         id: 'provider-1',
-        type: 'circle',
+        type: 'initiNode',
         data: { label: 'onJoinPlayer' },
         position: { x: 250, y: 5 },
       },
-      { id: 'provider-2', type: 'diamond', data: { label: 'start?' }, position: { x: 100, y: 100 } },
+      { id: 'provider-2', type: 'decisionNode', data: { label: 'start?' }, position: { x: 100, y: 100 } },
       { id: 'provider-3', data: { label: 'new player assign\nplayer zombie' }, position: { x: 400, y: 100 } },
     ],
     edges: [
@@ -51,7 +51,7 @@ export const initialState = {
     nodes: [
       {
         id: 'provider-1',
-        type: 'circle',
+        type: 'initiNode',
         data: { label: 'onStart' },
         position: { x: 250, y: 5 },
       },
@@ -62,7 +62,7 @@ export const initialState = {
     nodes: [
       {
         id: 'provider-1',
-        type: 'circle',
+        type: 'initiNode',
         data: { label: 'onUpdate' },
         position: { x: 250, y: 5 },
       },
@@ -73,7 +73,7 @@ export const initialState = {
     nodes: [
       {
         id: 'provider-1',
-        type: 'circle',
+        type: 'initiNode',
         data: { label: 'onLeavePlayer' },
         position: { x: 250, y: 5 },
       },
@@ -91,7 +91,7 @@ export const initialState = {
     nodes: [
       {
         id: 'provider-1',
-        type: 'circle',
+        type: 'initiNode',
         data: { label: 'onDestroy' },
         position: { x: 250, y: 5 },
       },
@@ -117,7 +117,7 @@ export const initialState = {
     nodes: [
       {
         id: 'provider-1',
-        type: 'circle',
+        type: 'initiNode',
         data: { label: 'onPlayerTouched' },
         position: { x: 250, y: 5 },
       },
