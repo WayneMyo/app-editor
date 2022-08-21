@@ -13,7 +13,6 @@ const SidePanel = ({ selected, onClick }) => {
         <TabList>
           <Tab>App</Tab>
           <Tab>Player</Tab>
-          <Tab>Map</Tab>
           <Tab>Widget</Tab>
         </TabList>
 
