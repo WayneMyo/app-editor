@@ -54,8 +54,8 @@ const ProviderFlow = ({ selected }) => {
           <NodeEditor node={node} nodes={nodes} setNodes={setNodes} />
         }
       </ReactFlowProvider>
-      <a style={{ display: "inline-block", textAlign: "right", paddingRight:"20px" }}> 
-        <Button colorScheme={'purple'} onClick={() => generateZep(nodes, edges)} href={`${process.env.PUBLIC_URL}/resource/app.zip`}>Export</Button>
+      <a style={{ display: "inline-block", textAlign: "right", paddingRight:"20px" }} href={`${process.env.PUBLIC_URL}/resource/app.zip`}> 
+        <Button colorScheme={'purple'} onClick={() => generateZep(nodes, edges)}>Export</Button>
       </a>
     </div>
   );
